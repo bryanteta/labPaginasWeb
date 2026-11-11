@@ -32,3 +32,16 @@ export const createUserValidators = [
     .isLength({ min: 6 })
     .withMessage('La clave debe tener al menos 6 caracteres')
 ]
+
+export const createPublicacionValidators = [
+
+    body('titulo')
+    .trim()
+    .notEmpty()
+    .withMessage('El titulo es obligatorio'),
+
+    body('descripcion')
+    .trim()
+    .notEmpty()
+    .withMessage('El descripcion es obligatorio'),
+]

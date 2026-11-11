@@ -1,5 +1,6 @@
 import express from 'express';
 import usersRoutes from './routes/users.js';
+import publicacionesRoutes from './routes/publicaciones.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -12,6 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', usersRoutes);
+app.use('/publicaciones', publicacionesRoutes);
 app.use(errorHandler);
 
 app.listen(process.env.PORT || 3000, () => {
